@@ -7,7 +7,7 @@ authors:
     Maximilian X. Li, Paul Mattes, Nils Blank, Korbinian F. Rudolf, Paul W. Loedige, Rudolf Lioutikov
 affiliations:
     Inutitive Robots Lab, KIT, Germany
-paper: /static/li2025mops-preprint.pdf
+paper: /mops/static/li2025mops-preprint.pdf
 #video: https://www.youtube.com/results?search_query=turing+machine
 #code: https://github.com/topics/turing-machines
 #data: https://huggingface.co/docs/datasets
