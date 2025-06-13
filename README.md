@@ -14,3 +14,6 @@ jekyll serve
 ```
 in this directory.
 Then you can see the website at `http://127.0.0.1:4000`.
+
+## Activate Github Pages:
+Go into repository settings, Github pages and serve.
