@@ -4,7 +4,7 @@ This repository jekyll-ized the source code for the [Nerfies website](https://ne
 You only need to change the content of [index.md](/index.md). 
 It's possible to only write in markdown, but you can also use HTML to achieve fancier effects.
 
-Here is an [example website](https://shunzh.github.io/project_website/).
+This webpage is served at [https://intuitive-robots.github.io/mops/](https://intuitive-robots.github.io/mops/)
 
 ## Test it locally
 
