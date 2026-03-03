@@ -239,6 +239,7 @@ body {
 
 /* ── Modality gallery ────────────────────────────────── */
 .modality-gallery {
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 
@@ -255,10 +256,20 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
 }
 
+.modality-card figure.image {
+  height: 180px;
+  overflow: hidden;
+  background: #f0f0f0;
+  border-radius: 12px 12px 0 0;
+  margin: 0;
+}
+
 .modality-card figure.image img {
   width: 100%;
+  height: 100%;
   display: block;
   object-fit: cover;
+  object-position: center;
 }
 
 .modality-label {
@@ -409,8 +420,7 @@ body {
 }
 
 .comparison-table thead tr {
-  background: #1a1a2e;
-  color: #fff;
+  background: #2d3a5e;
 }
 
 .comparison-table thead th {
@@ -421,6 +431,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   white-space: nowrap;
+  color: #ffffff;
 }
 
 .comparison-table thead th:first-child {
@@ -560,4 +571,52 @@ body {
   color: #888;
   font-size: 0.93rem;
   padding-bottom: 1rem;
+}
+
+/* ── Results split (two-column results section) ──────── */
+.results-split>.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.results-col-label {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1a1a2e;
+  margin-bottom: 0.2rem;
+}
+
+.results-col-sub {
+  font-size: 0.83rem;
+  color: #999;
+  margin-bottom: 0.9rem;
+}
+
+.results-stats-inline {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0;
+}
+
+.results-stats-inline .stat-box {
+  flex: 1;
+  min-width: unset;
+  box-shadow: none;
+}
+
+/* ── Citation + Ack row ──────────────────────────────── */
+.citation-ack-row {
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.ack-column {
+  max-width: 220px;
+}
+
+.ack-text {
+  font-size: 0.92rem;
+  color: #666;
+  line-height: 1.65;
 }
