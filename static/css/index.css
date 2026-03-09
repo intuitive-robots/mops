@@ -420,21 +420,22 @@ body {
 }
 
 .comparison-table thead tr {
-  background: #2d3a5e;
+  background: #17233b;
 }
 
-.comparison-table thead th {
+.content .comparison-table thead th {
   padding: 0.75rem 1.1rem;
   text-align: center;
-  font-weight: 600;
-  font-size: 0.82rem;
+  font-weight: 700;
+  font-size: 0.86rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   white-space: nowrap;
   color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.comparison-table thead th:first-child {
+.content .comparison-table thead th:first-child {
   text-align: left;
 }
 
