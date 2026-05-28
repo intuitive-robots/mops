@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>MOPS: Multi-Object Photoreal Simulation Dataset for Computer Vision in Robot Manipulation</title>
+    <title>MOPS: Multi-Objective Photoreal Simulation Dataset for Computer Vision in Robot Manipulation</title>
     <meta name="description"
         content="MOPS is a photorealistic simulation dataset providing comprehensive ground truth annotations — RGB, depth, normals, part segmentation, and affordance labels — for robot manipulation research.">
     <meta name="keywords"
@@ -14,16 +14,18 @@
 
     <!-- Open Graph / link previews -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="MOPS: Multi-Object Photoreal Simulation Dataset">
+    <meta property="og:title" content="MOPS: Multi-Objective Photoreal Simulation Dataset">
     <meta property="og:description"
         content="Photorealistic simulation dataset with part-level affordance annotations for robot manipulation.">
     <meta property="og:url" content="https://intuitive-robots.github.io/mops/">
+    <meta property="og:image" content="https://intuitive-robots.github.io/mops/static/image/rgb.png">
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MOPS Dataset">
     <meta name="twitter:description"
         content="Photorealistic simulation dataset with part-level affordance annotations for robot manipulation.">
+    <meta name="twitter:image" content="https://intuitive-robots.github.io/mops/static/image/rgb.png">
 
     <!-- Fonts & icons -->
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -66,7 +68,7 @@
                     <div class="column has-text-centered">
 
                         <h1 class="title is-2 publication-title">
-                            MOPS: Multi-Object Photoreal Simulation Dataset<br>
+                            MOPS: Multi-Objective Photoreal Simulation Dataset<br>
                             for Computer Vision in Robot Manipulation
                         </h1>
 
@@ -92,10 +94,17 @@
                                     </a>
                                 </span>
                                 <span class="link-block">
-                                    <a href="https://github.com/LiXiling/mops-data"
+                                    <a href="https://github.com/LiXiling/mops-repo"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon"><i class="fab fa-github"></i></span>
                                         <span>Code</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="https://huggingface.co/collections/LiXiling/mops"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon"><i class="fas fa-database"></i></span>
+                                        <span>Dataset</span>
                                     </a>
                                 </span>
                             </div>
@@ -118,18 +127,23 @@
                         <h2 class="section-heading">Abstract</h2>
                         <div class="has-text-justified abstract-text">
                             <p>
-                                Datasets bridging computer vision and robotics by providing high-quality visual
-                                annotations in manipulation-relevant scenes remain limited.
-                                This work introduces the <strong>Multi-Object Photoreal Simulation (MOPS)</strong>
-                                dataset, which provides comprehensive ground truth annotations for photorealistic
-                                simulated environments. MOPS employs a zero-shot asset augmentation pipeline based on
-                                Large Language Models (LLM) to automatically normalize 3D object scale and generate
-                                part-level affordances. The dataset features pixel-level segmentations for tasks
-                                crucial to robotic perception, including fine-grained part segmentation and affordance
-                                prediction (e.g., <em>&ldquo;graspable&rdquo;</em> or <em>&ldquo;pushable&rdquo;</em>).
-                                By combining detailed annotations with photorealistic simulation, MOPS generates a
-                                vast, diverse collection of scenes to accelerate progress in robot perception and
-                                manipulation. We validate MOPS through vision and robot learning benchmarks.
+                                Datasets providing high-quality visual annotations in manipulation-relevant scenes
+                                remain scarce. We introduce <strong>MOPS</strong>, a dataset generation framework that
+                                combines 3D assets from PartNet-Mobility and RoboCasa with a zero-shot LLM-based
+                                augmentation pipeline to automatically normalize object scale and generate part-level
+                                affordance annotations, describing how an object part can be manipulated (e.g., a mug
+                                handle is <em>&ldquo;graspable,&rdquo;</em> a drawer is
+                                <em>&ldquo;pullable&rdquo;</em>).
+                                Built on ManiSkill3, MOPS produces photorealistic indoor scenes with pixel-perfect
+                                ground truth for class, part, and instance segmentation, multi-label affordances, depth,
+                                surface normals, and 6D poses, spanning 54 affordance types across 137 object
+                                categories. Human verification confirms <strong>97.3%</strong> accuracy of the zero-shot
+                                affordance labels. We validate MOPS on three vision benchmarks of increasing scene
+                                complexity and show that ground-truth affordance masks improve imitation learning
+                                success rates on 24 RoboCasa manipulation tasks by <strong>7.9 percentage
+                                    points</strong>
+                                over RGB-only baselines, with predicted affordances still yielding measurable gains.
+                                The dataset and framework are publicly available.
                             </p>
                         </div>
                     </div>
@@ -201,7 +215,8 @@
                             <div class="feature-icon">🤖</div>
                             <h3 class="feature-title">LLM-Powered Annotation</h3>
                             <p class="feature-text">Zero-shot asset augmentation using large language models for
-                                automatic part-level labeling, scale normalization, and semantic understanding.</p>
+                                automatic part-level labeling, scale normalization, and semantic understanding
+                                &mdash; <strong>97.3%</strong> accurate against human verification.</p>
                         </div>
                     </div>
                     <div class="column is-half">
@@ -218,7 +233,7 @@
                             <div class="feature-icon">🏠</div>
                             <h3 class="feature-title">Diverse Environments</h3>
                             <p class="feature-text">Kitchen environments, cluttered tabletops, and isolated object
-                                scenarios spanning 137 object categories and 56 affordance labels.</p>
+                                scenarios spanning 137 object categories and 54 affordance labels.</p>
                         </div>
                     </div>
                 </div>
@@ -260,7 +275,7 @@
                                     </tr>
                                     <tr class="table-section-divider table-highlight">
                                         <td><strong>MOPS (Total)</strong></td>
-                                        <td><strong>56</strong></td>
+                                        <td><strong>54</strong></td>
                                         <td><strong>137</strong></td>
                                         <td>3,353</td>
                                     </tr>
@@ -332,43 +347,31 @@
                                     <span class="tag is-warning"><strong>Alpha</strong></span>
                                 </div>
                                 <div class="column">
-                                    <strong>Early release</strong> &mdash; API may change. Code is split across two
-                                    repositories:
+                                    <strong>Early release</strong> &mdash; actively developed, API may change. Code and
+                                    dataset are now publicly available:
                                 </div>
                             </div>
                             <div class="repo-links" style="margin-top:0.6rem;">
-                                <a href="https://github.com/LiXiling/mops-data" class="repo-pill is-available">
+                                <a href="https://github.com/LiXiling/mops-repo" class="repo-pill is-available">
                                     <span>⚙️</span>
-                                    <span><code>mops-data</code> &mdash; Image generation in ManiSkill3</span>
+                                    <span><code>mops-repo</code> &mdash; Generation framework &amp; benchmarks</span>
                                     <span class="repo-status">Available</span>
                                 </a>
-                                <span class="repo-pill is-coming-soon">
-                                    <span>🤖</span>
-                                    <span><code>mops-il</code> &mdash; Robot trajectories in RoboCasa v0.1</span>
-                                    <span class="repo-status">Coming Soon</span>
-                                </span>
+                                <a href="https://huggingface.co/collections/LiXiling/mops"
+                                    class="repo-pill is-available">
+                                    <span>🤗</span>
+                                    <span>HuggingFace &mdash; MOPS dataset collection</span>
+                                    <span class="repo-status">Available</span>
+                                </a>
                             </div>
                         </div>
 
-                        <div class="install-box">
-                            <p class="install-prereqs">
-                                <strong>Prerequisites:</strong> Python 3.10 &nbsp;&middot;&nbsp;
-                                CUDA-compatible GPU &nbsp;&middot;&nbsp; 16 GB+ RAM
-                            </p>
-                            <pre><code class="language-bash">conda create -n mops python=3.10
-conda activate mops
-
-pip install mani_skill
-git clone https://github.com/LiXiling/mops-data
-cd mops-data
-pip install -e .</code></pre>
-                            <p style="margin-top:1rem;">
-                                <a href="https://github.com/LiXiling/mops-data#installation"
-                                    class="external-link button is-link is-light is-small is-rounded">
-                                    📖 Full Installation Guide &rarr;
-                                </a>
-                            </p>
-                        </div>
+                        <p class="has-text-centered">
+                            <a href="https://github.com/LiXiling/mops-repo#installation"
+                                class="external-link button is-link is-light is-small is-rounded">
+                                📖 Setup &amp; Installation Guide &rarr;
+                            </a>
+                        </p>
                     </div>
                 </div>
 
